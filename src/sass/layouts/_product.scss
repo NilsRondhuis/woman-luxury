@@ -1,0 +1,48 @@
+.section-product {
+  .box-img {
+    margin-bottom: 20px;
+  }
+}
+
+.product-title {
+  text-align: center;
+}
+
+.characteristics-list {
+  margin-bottom: 60px;
+
+  .item {
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+    &.item-size,
+    &.item-color {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .characteristics-title {
+    font-family: "Oswald", sans-serif;
+  }
+
+  .product-color {
+    display: inline-block;
+    margin-left: 10px;
+    width: 50px;
+    height: 20px;
+    background-color: black;
+    border-radius: 3px;
+  }
+}
+
+.box-btn-size {
+  margin-left: 10px;
+
+  .size-btn {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: 2px solid var(--main-cl);
+  }
+}

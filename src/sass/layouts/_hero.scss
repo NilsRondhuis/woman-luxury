@@ -1,0 +1,37 @@
+.section-hero {
+  padding: 360px 0 30px 0;
+  background-color: var(--accent-cl);
+  background-image: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.4) 100%
+    ),
+    url(../images/hero/item-1.png);
+  background-size: cover;
+  background-position: center center, -60px 0;
+  background-repeat: no-repeat;
+
+  .box-content {
+    margin: 0 auto;
+    max-width: 330px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.main-title {
+  font-family: "Italiana", serif;
+  font-size: 78px;
+  letter-spacing: 3px;
+  margin-bottom: 5px;
+}
+
+.hero-text {
+  margin-bottom: 30px;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.1em;
+}

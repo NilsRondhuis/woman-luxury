@@ -1,0 +1,37 @@
+.section-reviews {
+  background-color: var(--main-cl);
+  background-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0.8) 100%
+    ),
+    url(../images/reviews/brand.png);
+  background-repeat: no-repeat;
+  background-size: cover, 400px;
+  background-position: center center;
+}
+
+// rgba(35, 31, 32, 0.9) 0%,
+
+.reviews-title {
+  margin-bottom: 50px;
+  text-align: center;
+  color: var(--accent-cl);
+}
+
+.reviews-slider {
+  padding-bottom: 20px;
+  overflow: hidden;
+
+  .swiper-pagination {
+    bottom: -5px;
+  }
+
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: var(--accent-cl);
+    // background-color: var(--main-cl);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+}
