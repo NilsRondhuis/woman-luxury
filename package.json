@@ -1,12 +1,12 @@
 {
-  "name": "my-temlate-parcel",
+  "name": "woman-luxury",
   "version": "1.0.0",
   "description": "",
-  "homepage": "https://NilsRondhuis.github.io/my-temlate-parcel",
+  "homepage": "https://NilsRondhuis.github.io/woman-luxury",
   "main": "index.js",
   "scripts": {
     "dev": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /my-temlate-parcel/",
+    "build": "parcel build src/*.html --public-url /woman-luxury/",
     "deploy": "gh-pages -d dist",
     "predeploy": "npm run build"
   },
