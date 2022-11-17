@@ -1,0 +1,19 @@
+.submit-message {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  padding: 20px;
+  width: 80%;
+  background-color: var(--main-cl);
+  border-right: 10px solid #40393b;
+  transition: var(--transition-settings);
+  transform: translateX(-110%);
+
+  .text {
+    color: var(--accent-cl);
+  }
+}
+
+.submit-message.submit-message__is-show {
+  transform: translateX(0);
+}

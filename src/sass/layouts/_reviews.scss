@@ -5,17 +5,25 @@
       rgba(0, 0, 0, 0.8) 0%,
       rgba(0, 0, 0, 0.8) 100%
     ),
-    url(../images/reviews/brand.png);
+    url(../images/reviews/brand.jpg);
   background-repeat: no-repeat;
   background-size: cover, 400px;
   background-position: center center;
-}
 
-// rgba(35, 31, 32, 0.9) 0%,
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    background-image: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 0, 0, 0.8) 100%
+      ),
+      url(../images/reviews/brand@2x.jpg);
+  }
+}
 
 .reviews-title {
   margin-bottom: 50px;
-  text-align: center;
   color: var(--accent-cl);
 }
 

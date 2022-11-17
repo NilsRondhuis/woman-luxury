@@ -1,3 +1,10 @@
 import "../node_modules/swiper/swiper-bundle.min.css";
 import "./sass/main.scss";
+import "./js/common/refs";
+import "./js/common/scroll";
+import "./js/scroll-order";
 import "./js/slider";
+import "./js/form/form-effects";
+import "./js/form/form-messages";
+import "./js/form/form-validate";
+import "./js/form/form-submit";

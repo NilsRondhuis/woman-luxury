@@ -1,0 +1,43 @@
+.ad {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 47px;
+  width: 100%;
+  padding: 10px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--accent-cl);
+  background-color: black;
+  overflow: hidden;
+}
+
+.anim-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 240px;
+  animation-name: animText;
+  animation-duration: 3000ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+}
+
+@keyframes animText {
+  0% {
+    transform: translate(100%, -50%);
+  }
+  25% {
+    transform: translate(25%, -50%);
+  }
+  50% {
+    transform: translate(-50%, -50%);
+  }
+  75% {
+    transform: translate(-125%, -50%);
+  }
+  100% {
+    transform: translate(-200%, -50%);
+  }
+}

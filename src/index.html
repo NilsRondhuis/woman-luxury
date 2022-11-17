@@ -24,7 +24,12 @@
       <div class="container">
         <nav>
           <a href="/" class="logo">
-            <img src="./images/logo/logo.png" alt="Логотип" width="100" />
+            <img
+              srcset="./images/logo/logo.png 1x, ./images/logo/logo@2x.png 2x"
+              src="./images/logo/logo.png"
+              alt="Логотип"
+              width="100"
+            />
           </a>
         </nav>
       </div>
@@ -38,7 +43,9 @@
             <p class="hero-text">
               Стильна та неперевершена дублянка з еко-шкіри, зігріває до -25С
             </p>
-            <button type="button" class="order-btn">Замовити</button>
+            <button type="button" class="order-btn scroll-order-btn">
+              Замовити
+            </button>
           </div>
         </div>
       </section>
@@ -77,12 +84,25 @@
 
         <ul class="about-list">
           <li class="item">
-            <img src="./images/gallery/1.png" alt="Дівчина в дублянці" />
+            <img
+              srcset="
+                ./images/about/item-1.jpg    1x,
+                ./images/about/item-1@2x.jpg 2x
+              "
+              src="./images/about/item-1.jpg"
+              alt="Дівчина в дублянці"
+              loading="lazy"
+            />
           </li>
           <li class="item">
             <img
-              src="./images/gallery/2.png"
+              srcset="
+                ./images/about/item-2.jpg    1x,
+                ./images/about/item-2@2x.jpg 2x
+              "
+              src="./images/about/item-2.jpg"
               alt="Дівчина в дублянці стоїть боком"
+              loading="lazy"
             />
           </li>
           <li class="item">
@@ -107,7 +127,15 @@
             </div>
           </li>
           <li class="item item-gradient">
-            <img src="./images/gallery/3.png" alt="" />
+            <img
+              srcset="
+                ./images/about/item-3.jpg    1x,
+                ./images/about/item-3@2x.jpg 2x
+              "
+              src="./images/about/item-3.jpg"
+              alt=""
+              loading="lazy"
+            />
           </li>
         </ul>
       </section>
@@ -135,13 +163,25 @@
 
       <section class="section section-product">
         <div class="container">
-          <h2 class="section-title product-title">
+          <h2 class="section-title">
             Дублянка <span class="brand">Aviator</span>
           </h2>
 
           <div class="product-card">
             <div class="box-img">
-              <img src="./images/product/item-1.png" alt="Дублянка Aviator" />
+              <img
+                srcset="
+                  ./images/product/item-1.png    1x,
+                  ./images/product/item-1@2x.png 2x
+                "
+                src="./images/product/item-1.png"
+                alt="Дублянка Aviator"
+                loading="lazy"
+              />
+              <span class="product-sale">
+                <span class="heading">SALE</span>
+                <span class="sale">-30%</span>
+              </span>
             </div>
             <ul class="characteristics-list">
               <li class="item">
@@ -168,19 +208,138 @@
                   <button type="button" class="size-btn">L</button>
                 </div>
               </li>
+              <li class="item">
+                <span class="characteristics-title">Ціна:</span>
+                <span class="new-price">3990 грн.</span>
+                <span class="old-price">5700 грн.</span>
+              </li>
             </ul>
           </div>
 
-          <button type="button" class="order-btn">Замовити</button>
+          <button type="button" class="order-btn scroll-order-btn">
+            Замовити
+          </button>
         </div>
+      </section>
+
+      <section>
+        <h3 class="visually-hidden">Фото Дублянки</h3>
+        <img
+          srcset="./images/photo/item-1.jpg 1x, ./images/photo/item-1@2x.jpg 2x"
+          src="./images/photo/item-1.jpg"
+          alt="Твоя улюблена річ цієї зими"
+          loading="lazy"
+        />
       </section>
 
       <section class="section section-form">
         <div class="container">
           <h3 class="section-title">Оформити замовлення</h3>
+          <p class="text">
+            Після відправки контактних даних, наш менеджер зв'яжеться з вами.
+            Напишіть в коментар розмір та дані для відправки.
+          </p>
+
+          <form class="form js-form">
+            <label class="label">
+              <span class="box-message name-box-message visually-hidden">
+                <span class="message name-message"></span>
+                <svg class="icon message-icon-name">
+                  <use href="./images/icons/sprite.svg#icon-play"></use>
+                </svg>
+              </span>
+
+              <span class="placeholder label-name">
+                Ім'я
+                <span class="required">*</span>
+              </span>
+
+              <input class="input input-name" type="text" name="name" />
+            </label>
+
+            <label class="label">
+              <span class="box-message number-box-message visually-hidden">
+                <span class="message number-message"></span>
+                <svg class="icon message-icon-number">
+                  <use href="./images/icons/sprite.svg#icon-play"></use>
+                </svg>
+              </span>
+
+              <span class="placeholder label-number">
+                Телефон
+                <span class="required">*</span>
+              </span>
+
+              <input class="input input-number" type="tel" name="number" />
+            </label>
+
+            <label class="label">
+              <textarea
+                name="text"
+                cols="20"
+                rows="5"
+                placeholder="Коментар до замовлення..."
+              ></textarea>
+            </label>
+
+            <button type="submit" class="order-btn submit-btn">Замовити</button>
+          </form>
         </div>
       </section>
     </main>
+
+    <footer class="section footer">
+      <div class="container">
+        <a href="/" class="logo logo-footer">
+          <img
+            srcset="
+              ./images/logo/logo-footer.png    1x,
+              ./images/logo/logo-footer@2x.png 2x
+            "
+            src="./images/logo/logo-footer.png"
+            alt="Логотип"
+            width="100"
+            loading="lazy"
+          />
+        </a>
+
+        <ul class="social-list">
+          <li class="item">
+            <a class="social-link" href="">Instagram</a>
+          </li>
+          <li class="item">
+            <a class="social-link" href="">Facebook</a>
+          </li>
+        </ul>
+
+        <address>
+          <a class="phone-number" href="tel:+380964453365">
+            +380 96 445 33 65
+          </a>
+        </address>
+
+        <p class="copy">
+          &copy; Woman Luxury <span class="current-year">2022</span>
+        </p>
+      </div>
+    </footer>
+
+    <div class="ad">
+      <span class="anim-text">BLACK FRIDAY SALE -30%</span>
+    </div>
+
+    <div class="submit-message submit-message-success">
+      <span class="text">
+        Дані відправлені, менеджер зв'яжеться з Вами в найближчий час.
+      </span>
+    </div>
+    <div class="submit-message submit-message-error">
+      <span class="text">
+        Сталася помилка. Спробуйте відправити дані ще раз, або перевірте
+        підключення до інтернету.
+      </span>
+    </div>
+
     <script src="index.js"></script>
   </body>
 </html>
