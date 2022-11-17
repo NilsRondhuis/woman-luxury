@@ -194,7 +194,62 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./..\\images\\hero\\item-1.png":[["item-1.327833ac.png","images/hero/item-1.png"],"images/hero/item-1.png"],"./..\\images\\icons\\order.png":[["order.b4dd5c97.png","images/icons/order.png"],"images/icons/order.png"],"./..\\images\\reviews\\brand.png":[["brand.b1d785fc.png","images/reviews/brand.png"],"images/reviews/brand.png"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/ssr-window/ssr-window.esm.js":[function(require,module,exports) {
+},{"./..\\images\\hero\\item-1.jpg":[["item-1.4a395341.jpg","images/hero/item-1.jpg"],"images/hero/item-1.jpg"],"./..\\images\\hero\\item-1@2x.jpg":[["item-1@2x.f4fd545d.jpg","images/hero/item-1@2x.jpg"],"images/hero/item-1@2x.jpg"],"./..\\images\\icons\\order.png":[["order.b4dd5c97.png","images/icons/order.png"],"images/icons/order.png"],"./..\\images\\reviews\\brand.jpg":[["brand.246ed23f.jpg","images/reviews/brand.jpg"],"images/reviews/brand.jpg"],"./..\\images\\reviews\\brand@2x.jpg":[["brand@2x.8a12fe71.jpg","images/reviews/brand@2x.jpg"],"images/reviews/brand@2x.jpg"],"./..\\images\\icons\\cross.png":[["cross.09f11cc9.png","images/icons/cross.png"],"images/icons/cross.png"],"./..\\images\\icons\\check.png":[["check.d591c75d.png","images/icons/check.png"],"images/icons/check.png"],"./..\\images\\footer\\item-1.jpg":[["item-1.98679eb8.jpg","images/footer/item-1.jpg"],"images/footer/item-1.jpg"],"./..\\images\\footer\\item-1@2x.jpg":[["item-1@2x.70b3fa67.jpg","images/footer/item-1@2x.jpg"],"images/footer/item-1@2x.jpg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"js/common/refs.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = {
+  sectionForm: document.querySelector(".section-form"),
+  form: document.querySelector(".js-form"),
+  inputName: document.querySelector(".input-name"),
+  inputNumber: document.querySelector(".input-number"),
+  labelName: document.querySelector(".label-name"),
+  labelNumber: document.querySelector(".label-number"),
+  nameBoxMessage: document.querySelector(".name-box-message"),
+  numberBoxMessage: document.querySelector(".number-box-message"),
+  nameMessage: document.querySelector(".name-message"),
+  numberMessage: document.querySelector(".number-message"),
+  submitBtn: document.querySelector(".submit-btn"),
+  submitMessageSuccess: document.querySelector(".submit-message-success"),
+  submitMessageError: document.querySelector(".submit-message-error")
+};
+exports.default = _default;
+},{}],"js/common/scroll.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+
+function _default(target) {
+  target.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
+},{}],"js/scroll-order.js":[function(require,module,exports) {
+"use strict";
+
+var _refs = _interopRequireDefault(require("./common/refs"));
+
+var _scroll = _interopRequireDefault(require("./common/scroll"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+window.addEventListener("click", onClickOrderBtn);
+
+function onClickOrderBtn(e) {
+  if (e.target.classList.contains("scroll-order-btn")) {
+    (0, _scroll.default)(_refs.default.sectionForm);
+  }
+
+  return;
+}
+},{"./common/refs":"js/common/refs.js","./common/scroll":"js/common/scroll.js"}],"../node_modules/ssr-window/ssr-window.esm.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12788,15 +12843,319 @@ const reviews = new _swiper.default(".reviews-slider", {
     clickable: true
   }
 });
-},{"swiper":"../node_modules/swiper/swiper.esm.js"}],"index.js":[function(require,module,exports) {
+},{"swiper":"../node_modules/swiper/swiper.esm.js"}],"js/form/form-effects.js":[function(require,module,exports) {
+"use strict";
+
+var _refs = _interopRequireDefault(require("../common/refs"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_refs.default.inputName.addEventListener("focus", onFocusInputName);
+
+_refs.default.inputName.addEventListener("blur", onNotFocusInputName);
+
+_refs.default.inputNumber.addEventListener("focus", onFocusInputTel);
+
+_refs.default.inputNumber.addEventListener("blur", onNotFocusInputTel);
+
+function onFocusInputName() {
+  _refs.default.labelName.classList.add("placeholder__is-hidden");
+}
+
+function onNotFocusInputName(e) {
+  if (e.target.value === "") {
+    _refs.default.labelName.classList.remove("placeholder__is-hidden");
+  } else return;
+}
+
+function onFocusInputTel() {
+  _refs.default.labelNumber.classList.add("placeholder__is-hidden");
+}
+
+function onNotFocusInputTel(e) {
+  if (e.target.value === "") {
+    _refs.default.labelNumber.classList.remove("placeholder__is-hidden");
+  } else return;
+}
+},{"../common/refs":"js/common/refs.js"}],"js/form/form-messages.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.removeErrorInputName = removeErrorInputName;
+exports.removeErrorInputNameIsEmpty = removeErrorInputNameIsEmpty;
+exports.removeErrorInputNumber = removeErrorInputNumber;
+exports.removeErrorInputNumberIsEmpty = removeErrorInputNumberIsEmpty;
+exports.showErrorInputNameIsEmpty = showErrorInputNameIsEmpty;
+exports.showErrorInputNameIsNumber = showErrorInputNameIsNumber;
+exports.showErrorInputNameLength = showErrorInputNameLength;
+exports.showErrorInputNumberIsEmpty = showErrorInputNumberIsEmpty;
+exports.showErrorInputNumberIsWord = showErrorInputNumberIsWord;
+exports.showSubmitFormError = showSubmitFormError;
+exports.showSubmitFormSuccess = showSubmitFormSuccess;
+
+var _refs = _interopRequireDefault(require("../common/refs"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function showErrorInputNameIsNumber() {
+  _refs.default.nameBoxMessage.classList.remove("visually-hidden");
+
+  _refs.default.nameMessage.textContent = "Поле Ім'я може містити тільки букви.";
+}
+
+function showErrorInputNameLength() {
+  _refs.default.nameBoxMessage.classList.remove("visually-hidden");
+
+  _refs.default.nameMessage.textContent = "Поле Ім'я може містити 2 або більше символів.";
+}
+
+function showErrorInputNumberIsWord() {
+  _refs.default.numberBoxMessage.classList.remove("visually-hidden");
+
+  _refs.default.numberMessage.textContent = "Поле Телефон може містити тільки цифри.";
+}
+
+function showErrorInputNameIsEmpty() {
+  _refs.default.nameBoxMessage.classList.remove("visually-hidden");
+
+  _refs.default.nameMessage.textContent = "Заповніть це поле.";
+
+  _refs.default.submitBtn.setAttribute("disabled", "true");
+}
+
+function showErrorInputNumberIsEmpty() {
+  _refs.default.numberBoxMessage.classList.remove("visually-hidden");
+
+  _refs.default.numberMessage.textContent = "Заповніть це поле.";
+
+  _refs.default.submitBtn.setAttribute("disabled", "true");
+}
+
+function removeErrorInputName() {
+  _refs.default.nameBoxMessage.classList.add("visually-hidden");
+}
+
+function removeErrorInputNumber() {
+  _refs.default.numberBoxMessage.classList.add("visually-hidden");
+}
+
+function showSubmitFormSuccess() {
+  _refs.default.submitMessageSuccess.classList.add("submit-message__is-show");
+
+  setTimeout(() => {
+    _refs.default.submitMessageSuccess.classList.remove("submit-message__is-show");
+  }, 5000);
+}
+
+function showSubmitFormError() {
+  _refs.default.submitMessageError.classList.add("submit-message__is-show");
+
+  setTimeout(() => {
+    _refs.default.submitMessageError.classList.remove("submit-message__is-show");
+  }, 5000);
+}
+
+function removeErrorInputNameIsEmpty() {
+  setTimeout(() => {
+    _refs.default.nameBoxMessage.classList.add("visually-hidden");
+
+    _refs.default.submitBtn.removeAttribute("disabled");
+  }, 3000);
+}
+
+function removeErrorInputNumberIsEmpty() {
+  setTimeout(() => {
+    _refs.default.numberBoxMessage.classList.add("visually-hidden");
+
+    _refs.default.submitBtn.removeAttribute("disabled");
+  }, 3000);
+}
+},{"../common/refs":"js/common/refs.js"}],"js/form/form-validate.js":[function(require,module,exports) {
+"use strict";
+
+var _refs = _interopRequireDefault(require("../common/refs"));
+
+var _formMessages = require("./form-messages");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_refs.default.inputName.addEventListener("input", onCheckInputName);
+
+_refs.default.inputNumber.addEventListener("input", onCheckInputNumber);
+
+function onCheckInputName(e) {
+  const inputName = e.target;
+
+  if (/\d/g.test(inputName.value)) {
+    inputName.classList.remove("success");
+    (0, _formMessages.showErrorInputNameIsNumber)();
+    inputName.classList.add("error");
+  } else {
+    inputName.classList.remove("error");
+    (0, _formMessages.removeErrorInputName)();
+    inputName.classList.add("success");
+  }
+
+  if (inputName.value.length < 2) {
+    (0, _formMessages.showErrorInputNameLength)();
+    inputName.classList.remove("success");
+    inputName.classList.add("error");
+  }
+
+  if (inputName.value === "") {
+    (0, _formMessages.removeErrorInputName)();
+    inputName.classList.remove("error");
+    inputName.classList.remove("success");
+  }
+
+  checkInputOnError();
+}
+
+function onCheckInputNumber(e) {
+  const inputTel = e.target;
+
+  if (/[а-яА-ЯёЁЇїІіЄєҐґa-zA-Z]/g.test(inputTel.value)) {
+    (0, _formMessages.showErrorInputNumberIsWord)();
+    inputTel.classList.remove("success");
+    inputTel.classList.add("error");
+  } else {
+    (0, _formMessages.removeErrorInputNumber)();
+    inputTel.classList.add("error");
+  }
+
+  if (/^((0|\+3|\+38|38))?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/g.test(inputTel.value)) {
+    inputTel.classList.remove("error");
+    inputTel.classList.add("success");
+  } else inputTel.classList.remove("success");
+
+  if (inputTel.value === "") {
+    (0, _formMessages.removeErrorInputNumber)();
+    inputTel.classList.remove("error");
+    inputTel.classList.remove("success");
+  }
+
+  checkInputOnError();
+}
+
+function checkInputOnError() {
+  if (_refs.default.inputName.classList.contains("error") || _refs.default.inputNumber.classList.contains("error")) {
+    _refs.default.submitBtn.setAttribute("disabled", "true");
+  } else _refs.default.submitBtn.removeAttribute("disabled");
+}
+},{"../common/refs":"js/common/refs.js","./form-messages":"js/form/form-messages.js"}],"js/form/form-submit.js":[function(require,module,exports) {
+"use strict";
+
+var _refs = _interopRequireDefault(require("../common/refs"));
+
+var _formMessages = require("./form-messages");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_refs.default.form.addEventListener("submit", onSubmitForm);
+
+const TOKEN = "5534414122:AAHFOiGPr9pLJKmINGOOWp705qDyXaHJiDE";
+const CHAT_ID = "-847883587";
+const URL_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
+const options = {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  }
+};
+
+function onSubmitForm(e) {
+  e.preventDefault();
+  const {
+    name,
+    number,
+    text
+  } = e.currentTarget.elements;
+
+  if (name.value === "") {
+    (0, _formMessages.showErrorInputNameIsEmpty)();
+    (0, _formMessages.removeErrorInputNameIsEmpty)();
+    return;
+  }
+
+  if (number.value === "") {
+    (0, _formMessages.showErrorInputNumberIsEmpty)();
+    (0, _formMessages.removeErrorInputNumberIsEmpty)();
+    return;
+  }
+
+  const data = {
+    name: name.value,
+    number: number.value,
+    text: text.value
+  };
+  fethTelegram(data);
+  console.log(data);
+  formReset(_refs.default);
+}
+
+function fethTelegram(data) {
+  let message = `<b>Заявка з сайту!</b>\n`;
+  message += `<b>Відправник: </b> ${data.name}\n`;
+  message += `<b>Телефон: </b> ${data.number}\n`;
+  message += `<b>Коментар: </b> ${data.text}`;
+  const dataTg = {
+    chat_id: CHAT_ID,
+    text: message,
+    parse_mode: "html"
+  };
+  options.body = JSON.stringify(dataTg);
+  fetch(URL_API, options).then(res => {
+    if (!res.ok) {
+      throw new Error(res.status);
+    }
+
+    return res.json();
+  }).then(res => {
+    (0, _formMessages.showSubmitFormSuccess)();
+  }).catch(err => {
+    (0, _formMessages.showSubmitFormError)();
+  });
+}
+
+function formReset(refs) {
+  const {
+    form,
+    inputName,
+    inputNumber,
+    labelName,
+    labelNumber
+  } = refs;
+  form.reset();
+  inputName.classList.remove("success");
+  inputNumber.classList.remove("success");
+  labelName.classList.remove("placeholder__is-hidden");
+  labelNumber.classList.remove("placeholder__is-hidden");
+}
+},{"../common/refs":"js/common/refs.js","./form-messages":"js/form/form-messages.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 require("../node_modules/swiper/swiper-bundle.min.css");
 
 require("./sass/main.scss");
 
+require("./js/common/refs");
+
+require("./js/common/scroll");
+
+require("./js/scroll-order");
+
 require("./js/slider");
-},{"../node_modules/swiper/swiper-bundle.min.css":"../node_modules/swiper/swiper-bundle.min.css","./sass/main.scss":"sass/main.scss","./js/slider":"js/slider.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+require("./js/form/form-effects");
+
+require("./js/form/form-messages");
+
+require("./js/form/form-validate");
+
+require("./js/form/form-submit");
+},{"../node_modules/swiper/swiper-bundle.min.css":"../node_modules/swiper/swiper-bundle.min.css","./sass/main.scss":"sass/main.scss","./js/common/refs":"js/common/refs.js","./js/common/scroll":"js/common/scroll.js","./js/scroll-order":"js/scroll-order.js","./js/slider":"js/slider.js","./js/form/form-effects":"js/form/form-effects.js","./js/form/form-messages":"js/form/form-messages.js","./js/form/form-validate":"js/form/form-validate.js","./js/form/form-submit":"js/form/form-submit.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -12824,7 +13183,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "5007" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "8393" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
