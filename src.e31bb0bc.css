@@ -340,9 +340,16 @@ p {
   color: var(--main-cl);
   background-color: transparent;
   border: 2px solid var(--main-cl);
+  transition: var(--transition-settings);
 }
 .box-btn-size .size-btn:not(:last-child) {
   margin-right: 10px;
+}
+
+.size-btn.size-btn__is-current {
+  font-weight: 700;
+  color: var(--accent-cl);
+  background-color: var(--main-cl);
 }
 
 .section-form .text {
@@ -365,6 +372,7 @@ p {
   padding: 10px 35px 10px 0;
   width: 100%;
   border: none;
+  -webkit-border: none;
   border-bottom: 2px solid var(--main-cl);
   outline: none;
 }
@@ -518,6 +526,33 @@ address .phone-number {
 
 .submit-message.submit-message__is-show {
   transform: translateX(0);
+}
+
+.btn-up {
+  position: fixed;
+  right: 15px;
+  bottom: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-image: linear-gradient(172deg, rgb(35, 31, 32) 0%, rgb(35, 31, 32) 40%, rgb(0, 0, 0) 100%);
+  border: none;
+  border-radius: 50%;
+  box-shadow: 1px 0px 8px 0px rgba(34, 60, 80, 0.2);
+  transform: translateY(200%);
+  transition: var(--transition-settings);
+  cursor: pointer;
+  z-index: 5;
+}
+.btn-up .icon {
+  width: 25px;
+  height: 25px;
+  fill: var(--accent-cl);
+}
+
+.btn-up.btn-up__is-show {
+  transform: translateY(0);
 }
 
 /*# sourceMappingURL=/src.e31bb0bc.css.map */
