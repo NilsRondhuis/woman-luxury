@@ -220,6 +220,7 @@ var _default = {
   submitBtn: document.querySelector(".submit-btn"),
   submitMessageSuccess: document.querySelector(".submit-message-success"),
   submitMessageError: document.querySelector(".submit-message-error"),
+  currentYear: document.querySelector(".current-year"),
   upBtn: document.querySelector(".btn-up")
 };
 exports.default = _default;
@@ -237,7 +238,20 @@ function _default(target) {
     block: "start"
   });
 }
-},{}],"js/scroll-order.js":[function(require,module,exports) {
+},{}],"js/common/current-year.js":[function(require,module,exports) {
+"use strict";
+
+var _refs = _interopRequireDefault(require("./refs"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function currentYear(element) {
+  const year = new Date();
+  element.textContent = String(year.getFullYear());
+}
+
+currentYear(_refs.default.currentYear);
+},{"./refs":"js/common/refs.js"}],"js/scroll-order.js":[function(require,module,exports) {
 "use strict";
 
 var _refs = _interopRequireDefault(require("./common/refs"));
@@ -13628,7 +13642,6 @@ var _scroll = _interopRequireDefault(require("./common/scroll"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-console.log(_lodash.default);
 window.addEventListener("scroll", (0, _lodash.default)(onShowUpBtn, 300));
 
 _refs.default.upBtn.addEventListener("click", () => {
@@ -13653,6 +13666,8 @@ require("./js/common/refs");
 
 require("./js/common/scroll");
 
+require("./js/common/current-year");
+
 require("./js/scroll-order");
 
 require("./js/slider");
@@ -13668,7 +13683,7 @@ require("./js/form/form-validate");
 require("./js/form/form-submit");
 
 require("./js/up-btn");
-},{"../node_modules/swiper/swiper-bundle.min.css":"../node_modules/swiper/swiper-bundle.min.css","./sass/main.scss":"sass/main.scss","./js/common/refs":"js/common/refs.js","./js/common/scroll":"js/common/scroll.js","./js/scroll-order":"js/scroll-order.js","./js/slider":"js/slider.js","./js/size-btn":"js/size-btn.js","./js/form/form-effects":"js/form/form-effects.js","./js/form/form-messages":"js/form/form-messages.js","./js/form/form-validate":"js/form/form-validate.js","./js/form/form-submit":"js/form/form-submit.js","./js/up-btn":"js/up-btn.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"../node_modules/swiper/swiper-bundle.min.css":"../node_modules/swiper/swiper-bundle.min.css","./sass/main.scss":"sass/main.scss","./js/common/refs":"js/common/refs.js","./js/common/scroll":"js/common/scroll.js","./js/common/current-year":"js/common/current-year.js","./js/scroll-order":"js/scroll-order.js","./js/slider":"js/slider.js","./js/size-btn":"js/size-btn.js","./js/form/form-effects":"js/form/form-effects.js","./js/form/form-messages":"js/form/form-messages.js","./js/form/form-validate":"js/form/form-validate.js","./js/form/form-submit":"js/form/form-submit.js","./js/up-btn":"js/up-btn.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -13696,7 +13711,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "4386" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "11771" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -371,9 +371,11 @@ p {
   display: block;
   padding: 10px 35px 10px 0;
   width: 100%;
-  border: none;
-  -webkit-border: none;
-  border-bottom: 2px solid var(--main-cl);
+  border: 2px solid var(--main-cl);
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-radius: none;
   outline: none;
 }
 .form .input {
