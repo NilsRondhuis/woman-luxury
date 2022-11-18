@@ -6,4 +6,5 @@ const reviews = new Swiper(".reviews-slider", {
     el: ".swiper-pagination",
     clickable: true,
   },
+  loop: true,
 });
