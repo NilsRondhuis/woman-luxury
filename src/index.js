@@ -2,6 +2,7 @@ import "../node_modules/swiper/swiper-bundle.min.css";
 import "./sass/main.scss";
 import "./js/common/refs";
 import "./js/common/scroll";
+import "./js/common/current-year";
 import "./js/scroll-order";
 import "./js/slider";
 import "./js/size-btn";

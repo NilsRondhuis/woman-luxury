@@ -21,5 +21,7 @@ export default {
   submitMessageSuccess: document.querySelector(".submit-message-success"),
   submitMessageError: document.querySelector(".submit-message-error"),
 
+  currentYear: document.querySelector(".current-year"),
+
   upBtn: document.querySelector(".btn-up"),
 };

@@ -2,8 +2,6 @@ import _throttle from "lodash.throttle";
 import refs from "./common/refs";
 import scroll from "./common/scroll";
 
-console.log(_throttle);
-
 window.addEventListener("scroll", _throttle(onShowUpBtn, 300));
 refs.upBtn.addEventListener("click", () => {
   scroll(document.body);
