@@ -3,7 +3,6 @@
 // font-family: 'Oswald', sans-serif;
 
 body {
-  padding-top: 47px;
   font-family: "Nunito", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -11,6 +10,10 @@ body {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--main-cl);
+}
+
+.main-body {
+  padding-top: 47px;
 }
 
 img {

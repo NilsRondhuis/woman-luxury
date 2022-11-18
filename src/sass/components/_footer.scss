@@ -48,11 +48,18 @@
 }
 
 address {
+  margin-bottom: 70px;
   font-style: normal;
 
   .phone-number {
     color: var(--accent-cl);
   }
+}
+
+.policy {
+  text-transform: uppercase;
+  text-decoration: underline;
+  color: var(--accent-cl);
 }
 
 .copy {
