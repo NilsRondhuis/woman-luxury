@@ -2,6 +2,14 @@
   padding: 50px 0;
   color: var(--accent-cl);
   background-color: var(--main-cl);
+
+  p {
+    text-align: justify;
+
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+  }
 }
 
 .list-info {
@@ -19,14 +27,6 @@
 .title {
   margin-bottom: 40px;
   text-align: center;
-}
-
-p {
-  text-align: justify;
-
-  &:not(:last-child) {
-    margin-bottom: 40px;
-  }
 }
 
 .back-link {
