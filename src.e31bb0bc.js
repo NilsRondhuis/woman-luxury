@@ -12871,7 +12871,8 @@ const reviews = new _swiper.default(".reviews-slider", {
   pagination: {
     el: ".swiper-pagination",
     clickable: true
-  }
+  },
+  loop: true
 });
 },{"swiper":"../node_modules/swiper/swiper.esm.js"}],"js/size-btn.js":[function(require,module,exports) {
 "use strict";
