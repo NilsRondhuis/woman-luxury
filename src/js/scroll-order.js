@@ -1,12 +1,22 @@
 import refs from "./common/refs";
 import scroll from "./common/scroll";
 
-window.addEventListener("click", onClickOrderBtn);
+refs.heroOrderBtn.addEventListener("click", onClickScrollProduct);
+refs.productOrderBtn.addEventListener("click", onClickScrollForm);
 
-function onClickOrderBtn(e) {
-  if (e.target.classList.contains("scroll-order-btn")) {
-    scroll(refs.sectionForm);
+function onClickScrollProduct() {
+  scroll(refs.sectionProduct);
+}
+
+function onClickScrollForm() {
+  const currentBtnSize = document.querySelector(".size-btn__is-current");
+
+  refs.textarea.value = "";
+
+  if (currentBtnSize) {
+    const size = currentBtnSize.textContent;
+    refs.textarea.value = `Розмір: ${size}`;
   }
 
-  return;
+  scroll(refs.sectionForm);
 }

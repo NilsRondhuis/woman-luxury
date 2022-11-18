@@ -73,9 +73,16 @@
     color: var(--main-cl);
     background-color: transparent;
     border: 2px solid var(--main-cl);
+    transition: var(--transition-settings);
 
     &:not(:last-child) {
       margin-right: 10px;
     }
   }
+}
+
+.size-btn.size-btn__is-current {
+  font-weight: 700;
+  color: var(--accent-cl);
+  background-color: var(--main-cl);
 }
